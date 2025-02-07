@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod hello -user guillaume -exec chown vincent {} \;
+chomn hello -user guillaume -exec chown vincent {} \;
