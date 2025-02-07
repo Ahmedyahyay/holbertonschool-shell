@@ -1,172 +1,84 @@
+# Permissions Project - Holberton School
 
-This script changes the owner of the file hello
-Permissions Project - Holberton School
+## Introduction
 
-Introduction
+## Task List
 
-This project teaches me how to manage file and directory permissions in Linux. Each script in this project performs a specific task to modify or adjust permissions.
+1. *My name is Betty*
+   - Switches the current user to betty.
 
-Task List
+2. *Who am I*
+   - Prints the effective username of the current user.
 
-0. My name is Betty
+3. *Groups*
+   - Prints all the groups the current user is part of.
 
-🔹 Description:
-Switches the current user to betty.
+4. *New Owner*
+   - Changes the owner of the file hello to betty.
 
-🔹 Command:
+5. *Empty!*
+   - Creates an empty file named hello.
 
-#!/bin/bash
-exec su betty
+6. *Execute*
+   - Adds execute permission to the owner of the file hello.
 
-1. Who am I
+7. *Multiple Permissions*
+   - Adds execute permission to the owner and the group owner, and read permission to other users for the file hello.
 
-🔹 Description:
-Prints the effective username of the current user.
+8. *Everybody!*
+   - Adds execute permission to the owner, group owner, and other users for the file hello.
 
-🔹 Command:
+9. *James Bond*
+   - Sets the file hello permissions as follows:
+     - No permissions for the owner
+     - No permissions for the group
+     - All permissions for other users
 
-#!/bin/bash
-exec whoami
+10. *John Doe*
+    - Sets the file hello permissions to 753.
 
-2. Groups
+11. *Look in the mirror*
+    - Sets the mode of hello to be the same as olleh.
 
-🔹 Description:
-Prints all the groups the current user is part of.
+12. *Directories*
+    - Adds execute permission to all subdirectories in the current directory for the owner, the group, and all other users. Regular files should not be changed.
 
-🔹 Command:
+13. *More directories*
+    - Creates a directory named my_dir with permissions 751.
 
-#!/bin/bash
-exec groups
+14. *Change group*
+    - Changes the group owner of the file hello to school.
 
-3. New Owner
+15. *Change owner and group*
+    - Changes the owner to vincent and the group to staff for all files and directories in the working directory.
 
-🔹 Description:
-Changes the owner of the file hello to betty.
+16. *Symbolic Links*
+    - Changes the owner and the group owner of the symbolic link hello to vincent and staff, respectively.
 
-🔹 Command:
+17. *If Only*
+    - Changes the owner of the file hello to vincent only if it is currently owned by guillaume.
 
-#!/bin/bash
-exec chown betty hello
+## How to Run the Scripts
 
-4. Empty!
+1. Make sure the script is executable:
+   bash
+   chmod +x script_name
+   
+2. Execute the script:
+   bash
+   ./script_name
+   
+3. Verify the changes:
+   bash
+   ls -l filename
+   
 
-🔹 Description:
-Creates an empty file named hello.
+## Project Requirements
 
-🔹 Command:
-
-#!/bin/bash
-exec touch hello
-
-5. Execute
-
-🔹 Description:
-Adds execute permission to the owner of the file hello.
-
-🔹 Command:
-
-#!/bin/bash
-exec chmod u+x hello
-
-6. Multiple Permissions
-
-🔹 Description:
-Adds execute permission to the owner and the group owner, and read permission to other users for the file hello.
-
-🔹 Command:
-
-#!/bin/bash
-exec chmod ug+x,o+r hello
-
-7. Everybody!
-
-🔹 Description:
-Adds execute permission to the owner, group owner, and other users for the file hello.
-
-🔹 Command:
-
-#!/bin/bash
-exec chmod a+x hello
-
-8. James Bond
-
-🔹 Description:
-Sets the file hello permissions as follows:
-    •   No permissions for the owner
-    •   No permissions for the group
-    •   All permissions for other users
-
-🔹 Command:
-
-#!/bin/bash
-exec chmod 007 hello
-
-9. John Doe
-
-🔹 Description:
-Sets the file hello permissions to 753.
-
-🔹 Command:
-
-#!/bin/bash
-exec chmod 753 hello
-
-10. Look in the mirror
-
-🔹 Description:
-Sets the mode of hello to be the same as olleh.
-
-🔹 Command:
-
-#!/bin/bash
-exec chmod --reference=olleh hello
-
-11. Directories
-
-🔹 Description:
-Adds execute permission to all subdirectories in the current directory for the owner, the group, and all other users. Regular files should not be changed.
-
-🔹 Command:
-
-#!/bin/bash
-exec find . -type d -exec chmod a+x {} \;
-
-12. More directories
-
-🔹 Description:
-Creates a directory named my_dir with permissions 751.
-
-🔹 Command:
-
-#!/bin/bash
-exec mkdir -m 751 my_dir
-
-13. Change group
-
-🔹 Description:
-Changes the group owner of the file hello to school.
-
-🔹 Command:
-
-#!/bin/bash
-exec chgrp school hello
-
-14. Change owner and group
-
-🔹 Description:
-Changes the owner to vincent and the group to staff for all files and directories in the working directory.
-
-🔹 Command:
-
-#!/bin/bash
-exec chown -R vincent:staff .
-
-15. Symbolic Links
-
-🔹 Description:
-Changes the owner and the group owner of the symbolic link hello to vincent and staff, respectively.
-
-🔹 Command:
-
-#!/bin/bash
-exec chown -h vincent:staff hello.
+- Use only vi, vim, emacs editors.
+- All scripts must run on Ubuntu 22.04 LTS.
+- Each script must be exactly two lines long.
+- All files must end with a new line.
+- The first line of all scripts must be #!/bin/bash.
+- Not allowed to use: &&, ||, or ;.
+- All files must be executable.
