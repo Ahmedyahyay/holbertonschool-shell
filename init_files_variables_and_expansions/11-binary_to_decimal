@@ -1,2 +1,4 @@
 #!/bin/bash
-dec=0; for ((i=0; i<${#BINARY}; i++)); do dec=$((dec * 2 + ${BINARY:i:1})); done; echo $dec
+binary_number=$BINARY
+decimal_number=$((2#$binary_number))
+echo $decimal_number
