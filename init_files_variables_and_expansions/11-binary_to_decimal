@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ibase=2; $BINARY" | bc
+dec=0; for ((i=0; i<${#BINARY}; i++)); do dec=$((dec * 2 + ${BINARY:i:1})); done; echo $dec
